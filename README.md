@@ -3,11 +3,25 @@
 
 # Question 1 (Naked Twins)
 Q: How do we use constraint propagation to solve the naked twins problem?  
-A: *Student should provide answer here*
+
+A: Adding a new constraint: No squares in the same unit, outside the two naked twins squares, can contain the twin values
+
+1. Given the rules of Sudoku, each unit can contain only one instance of a digit.
+2. The Naked Twins represents two boxes from the same unit that permit the same two values.
+3. Given that one of the twins will take first value, and the other the second,
+all the other boxes from that unit are not permitted to use them.
+4. If a Naked Twins Pair exists in a Unit, then we can infer that for all the other peers
+from that unit, there is the constraint that they are not permitted to use the values of the naked twins.
+5. So we eliminate the naked twins values from the list of possible values of all the other boxes contained
+in that particular unit.
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: *Student should provide answer here*
+A: Updating the primary constraint to: A digit must occur once and only once in each unit, including the diagonal ones.
+
+1. Add the 2 new diagonal units to the unit list.
+2. Then the primary constraint of Sudoku, must be applied to the 2 diagonal units also: a digit must occur once and only once in each unit.
+
 
 ### Install
 
